@@ -6,19 +6,14 @@ using UnityEngine.EventSystems;
 public class TextBoxes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static GameObject itemBeingDragged;
-    [SerializeField] public GameObject button;
+    [SerializeField] public GameObject buttonCollider;
+    private Collider2D _collider;
     Vector3 startPosition;
     Vector3 endPosition;
 
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        Debug.Log("COLLIDED");
-        if (itemBeingDragged == null && endPosition != Vector3.one) 
-        {
-            //if statment for if the word on the button matchs the word needed
-            endPosition = Vector3.one;
-            button.SetActive(false);
-        }
+        _collider = GetComponent<Collider2D>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -36,7 +31,15 @@ public class TextBoxes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         itemBeingDragged = null;
         endPosition = transform.position;
-        transform.position = startPosition;
-        Debug.Log("END DRAG");
+        buttonCollider.transform.position = endPosition;
+       transform.position = startPosition;
+       // Debug.Log("END DRAG");
+    }
+
+    public void collided()
+    {
+        endPosition = startPosition;
+        gameObject.SetActive(false);
+       // buttonCollider.SetActive(false);
     }
 }
