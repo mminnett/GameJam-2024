@@ -7,19 +7,15 @@ public class TextBoxes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 {
     public static GameObject itemBeingDragged;
     [SerializeField] public GameObject buttonCollider;
-    private Collider2D _collider;
     Vector3 startPosition;
     Vector3 endPosition;
-
-    private void Start()
-    {
-        _collider = GetComponent<Collider2D>();
-    }
+    [SerializeField] float waitTimer = 4;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         itemBeingDragged = gameObject;
         startPosition = transform.position;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -32,14 +28,33 @@ public class TextBoxes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         itemBeingDragged = null;
         endPosition = transform.position;
         buttonCollider.transform.position = endPosition;
-       transform.position = startPosition;
-       // Debug.Log("END DRAG");
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        StartCoroutine(WaitTime());
+        // Debug.Log("END DRAG");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        Debug.Log("hello");
+        if (collision.gameObject.tag == "GameZone")
+        {
+            Debug.Log("We got him");
+        }
     }
 
     public void collided()
     {
         endPosition = startPosition;
         gameObject.SetActive(false);
-       // buttonCollider.SetActive(false);
+        buttonCollider.SetActive(false);
+    }
+
+    public IEnumerator WaitTime()
+    {
+
+        yield return new WaitForSeconds(waitTimer);
+
+        transform.position = startPosition;
     }
 }
