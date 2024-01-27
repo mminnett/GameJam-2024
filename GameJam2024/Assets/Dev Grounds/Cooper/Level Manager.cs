@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
 
     public void GenerateTerrain()
     {
-        Vector3 lastPos = new Vector3(0, -2.75f,0);
+        Vector3 lastPos = new Vector3(0, startPoint.position.y ,0);
         Vector3 nextPos = lastPos;
 
         Instantiate(startingTerrain[0], nextPos, Quaternion.identity, startPoint);
