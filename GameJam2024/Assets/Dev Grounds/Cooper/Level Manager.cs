@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
 
                 for (int i = 0; i < 12; i++)
                 {
-                    nextPos = lastPos + new Vector3(15, 0, 0);
+                    nextPos = lastPos + new Vector3(20, 0, 0);
 
                     if (i % 2 == 0)
                     {
@@ -59,7 +59,7 @@ public class LevelManager : MonoBehaviour
                     }
                     lastPos = nextPos;
                 }
-                nextPos = lastPos + new Vector3(15, 0, 0);
+                nextPos = lastPos + new Vector3(20, 0, 0);
 
                 Instantiate(bossTerrain[0], nextPos, Quaternion.identity, startPoint);
                 break;
@@ -69,7 +69,7 @@ public class LevelManager : MonoBehaviour
 
                 for (int i = 0; i < 12; i++)
                 {
-                    nextPos = lastPos + new Vector3(15, 0, 0);
+                    nextPos = lastPos + new Vector3(20, 0, 0);
 
                     if (i % 2 == 0)
                     {
@@ -88,7 +88,7 @@ public class LevelManager : MonoBehaviour
 
                 for (int i = 0; i < 12; i++)
                 {
-                    nextPos = lastPos + new Vector3(15, 0, 0);
+                    nextPos = lastPos + new Vector3(20, 0, 0);
 
                     if (i % 2 == 0)
                     {
@@ -107,7 +107,7 @@ public class LevelManager : MonoBehaviour
 
                 for (int i = 0; i < 12; i++)
                 {
-                    nextPos = lastPos + new Vector3(15, 0, 0);
+                    nextPos = lastPos + new Vector3(20, 0, 0);
 
                     if (i % 2 == 0)
                     {

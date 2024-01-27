@@ -266,8 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b089f0b3b0d214e8e1bc811235edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatButton: {fileID: 1230662120}
-  ogPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &79537385
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,8 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b089f0b3b0d214e8e1bc811235edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatButton: {fileID: 812683906}
-  ogPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &151514089
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCollider: {fileID: 749511490}
+  waitTimer: 4
 --- !u!1 &262545738
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCollider: {fileID: 1282515235}
+  waitTimer: 4
 --- !u!1 &377033877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,8 +1129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b089f0b3b0d214e8e1bc811235edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatButton: {fileID: 1757895066}
-  ogPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,8 +1754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b089f0b3b0d214e8e1bc811235edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatButton: {fileID: 151514089}
-  ogPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &777764568
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCollider: {fileID: 1253861349}
+  waitTimer: 4
 --- !u!1 &812683906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,6 +2159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCollider: {fileID: 79537385}
+  waitTimer: 4
 --- !u!1 &947251266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,6 +2429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCollider: {fileID: 1163903186}
+  waitTimer: 4
 --- !u!1 &1162897067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,8 +2648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b089f0b3b0d214e8e1bc811235edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatButton: {fileID: 1051301316}
-  ogPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1177878143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,6 +2917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCollider: {fileID: 45393735}
+  waitTimer: 4
 --- !u!1 &1239075775
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,8 +3061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b089f0b3b0d214e8e1bc811235edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatButton: {fileID: 1241537853}
-  ogPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1241537853
 GameObject:
   m_ObjectHideFlags: 0
@@ -3202,6 +3196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCollider: {fileID: 1239075775}
+  waitTimer: 4
 --- !u!1 &1253861349
 GameObject:
   m_ObjectHideFlags: 0
@@ -3345,8 +3340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b089f0b3b0d214e8e1bc811235edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatButton: {fileID: 786506577}
-  ogPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1278266399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3391,7 +3384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0288542bba06dbc49bc0749368185a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
   waitTime: 1
   canMove: 0
 --- !u!1 &1282515235
@@ -3537,8 +3530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b089f0b3b0d214e8e1bc811235edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatButton: {fileID: 351106218}
-  ogPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1304507256
 GameObject:
   m_ObjectHideFlags: 0
@@ -3674,6 +3665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCollider: {fileID: 1838514026}
+  waitTimer: 4
 --- !u!1 &1308049847
 GameObject:
   m_ObjectHideFlags: 0
@@ -4437,6 +4429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCollider: {fileID: 401286279}
+  waitTimer: 4
 --- !u!1 &1819612371
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,8 +4573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b089f0b3b0d214e8e1bc811235edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatButton: {fileID: 2065277763}
-  ogPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1838514026
 GameObject:
   m_ObjectHideFlags: 0
@@ -4725,8 +4716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b089f0b3b0d214e8e1bc811235edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatButton: {fileID: 1304507256}
-  ogPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1885337555
 GameObject:
   m_ObjectHideFlags: 0
@@ -5339,6 +5328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCollider: {fileID: 1819612371}
+  waitTimer: 4
 --- !u!1 &2071896171
 GameObject:
   m_ObjectHideFlags: 0
