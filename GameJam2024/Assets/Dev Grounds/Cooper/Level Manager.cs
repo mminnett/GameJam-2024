@@ -133,9 +133,23 @@ public class LevelManager : MonoBehaviour
             lastPos = nextPos;
         }
 
-        nextPos = lastPos + new Vector3(20, 0, 0);
+        /////////////////////////////////////
+        //Boss
+        /////////////////////////////////////
+        for (int i = 0; i <= 3; i++)
+        {
+            nextPos = lastPos + new Vector3(20, 0, 0);
 
-        Instantiate(bossTerrain[0], nextPos, Quaternion.identity, startPoint);
+            if (i == 0)
+            {
+                Instantiate(bossTerrain[0], nextPos, Quaternion.identity, startPoint);
 
+            }
+            else
+            {
+                Instantiate(bossTerrain[1], nextPos, Quaternion.identity, startPoint);
+            }
+            lastPos = nextPos;
+        }
     }
 }
