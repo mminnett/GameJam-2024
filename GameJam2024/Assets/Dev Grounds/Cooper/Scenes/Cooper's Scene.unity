@@ -3350,6 +3350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278266400}
   - component: {fileID: 1278266401}
+  - component: {fileID: 1278266402}
   m_Layer: 0
   m_Name: Enviroment
   m_TagString: Untagged
@@ -3387,6 +3388,28 @@ MonoBehaviour:
   moveSpeed: 3
   waitTime: 1
   canMove: 0
+--- !u!114 &1278266402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278266399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de22492cdf840ad4e8665fcac27f8a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList1:
+  - {fileID: 3090833640109020603, guid: 547610140d3ef6f46b67e0dee2b4537e, type: 3}
+  - {fileID: 3090833640109020603, guid: 27e8016cdc8a52844bfe53d3e2e3b4c9, type: 3}
+  - {fileID: 3090833640109020603, guid: de59fe8c597dd16499b030a6703f3279, type: 3}
+  - {fileID: 3090833640109020603, guid: 47c6b5867c244864c827e5bb0dd5b99c, type: 3}
+  - {fileID: 3090833640109020603, guid: ad2a487b0e1f4a84db8b7e024b5faad0, type: 3}
+  - {fileID: 3090833640109020603, guid: ebe0ec6c1bc3d5f45b0a70a990eddc9e, type: 3}
+  enemyList2: []
+  enemyList3: []
+  enemyList4: []
 --- !u!1 &1282515235
 GameObject:
   m_ObjectHideFlags: 0

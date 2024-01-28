@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: SlideTerrain
       objectReference: {fileID: 0}
+    - target: {fileID: 4821371592049179247, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5237797112651634301, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
