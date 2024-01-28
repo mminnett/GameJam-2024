@@ -24,6 +24,12 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] public GameObject speachBox;
     [SerializeField] public GameObject speachBoxPoint;
     [SerializeField] public GameObject promptText;
+    [SerializeField] public GameObject enviornmentManager;
+    [SerializeField] public float speedUpLength;
+    public bool hasCollided;
+    public string theButtonText;
+    public List<string> theAnswers;
+    public bool enemyIsDead;
 
     private void Start()
     {
@@ -31,6 +37,9 @@ public class ButtonManager : MonoBehaviour
         {
             instance = this;
         }
+
+        enemyIsDead = false;
+        hasCollided = false;
 
         speachBox.gameObject.SetActive(false);
         speachBoxPoint.gameObject.SetActive(false);

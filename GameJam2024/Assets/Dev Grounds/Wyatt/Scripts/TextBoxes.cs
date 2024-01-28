@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -41,10 +42,11 @@ public class TextBoxes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        Debug.Log("hello");
         if (collision.gameObject.tag == "GameZone")
         {
-            Debug.Log("We got him");
+            Debug.Log("Button is in the right place");
+            ButtonManager.Instance.hasCollided = true;
+            ButtonManager.Instance.theButtonText = gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
         }
     }
 
@@ -52,7 +54,6 @@ public class TextBoxes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         endPosition = startPosition;
         gameObject.SetActive(false);
-        buttonCollider.SetActive(false);
     }
 
     IEnumerator WaitTime()

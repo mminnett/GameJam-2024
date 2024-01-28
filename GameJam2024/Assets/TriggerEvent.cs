@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -23,6 +24,8 @@ public class TriggerEvent : MonoBehaviour
 
     private GameObject parent;
 
+    private GameObject whoYouWantDead;
+
     private void Awake()
     {
         parent = transform.parent.gameObject;
@@ -42,7 +45,11 @@ public class TriggerEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (ButtonManager.Instance.enemyIsDead) 
+        {
+            Debug.Log("They Be dead");
+        whoYouWantDead.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -50,6 +57,9 @@ public class TriggerEvent : MonoBehaviour
         switch (type)
         {
             case eventType.ENEMY:
+                ButtonManager.Instance.enemyIsDead = false;
+                ButtonManager.Instance.theAnswers.Clear();
+                ButtonManager.Instance.hasCollided = false;
                 BackgroundManager.Instance.triggerCount++;
                 Debug.Log("Enemy trigger");
                 EnemyPick();
@@ -81,6 +91,7 @@ public class TriggerEvent : MonoBehaviour
             {
                 int i = Random.Range(0, enemy1.Count);
                 whatEnemy = i;
+                whoYouWantDead = EnemyManager.Instance.enemyList1[i];
                 SetUpButtons();
                 Debug.Log("Spawn 'Enemy'");
                 Instantiate(EnemyManager.Instance.enemyList1[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
@@ -98,6 +109,7 @@ public class TriggerEvent : MonoBehaviour
             {
                 int i = Random.Range(0, enemy2.Count);
                 whatEnemy = i;
+                whoYouWantDead = EnemyManager.Instance.enemyList2[i];
                 SetUpButtons();
                 Debug.Log("Spawn 'Enemy'");
                 Instantiate(EnemyManager.Instance.enemyList2[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
@@ -115,6 +127,7 @@ public class TriggerEvent : MonoBehaviour
             {
                 int i = Random.Range(0, enemy3.Count);
                 whatEnemy = i;
+                whoYouWantDead = EnemyManager.Instance.enemyList3[i];
                 SetUpButtons();
                 Debug.Log("Spawn 'Enemy'");
                 Instantiate(EnemyManager.Instance.enemyList3[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
@@ -132,6 +145,7 @@ public class TriggerEvent : MonoBehaviour
             {
                 int i = Random.Range(0, enemy4.Count);
                 whatEnemy = i;
+                whoYouWantDead = EnemyManager.Instance.enemyList4[i];
                 SetUpButtons();
                 Debug.Log("Spawn 'Enemy'");
                 Instantiate(EnemyManager.Instance.enemyList4[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
@@ -145,6 +159,7 @@ public class TriggerEvent : MonoBehaviour
         ButtonManager.Instance.speachBox.SetActive(true);
         ButtonManager.Instance.speachBoxPoint.SetActive(true);
         ButtonManager.Instance.promptText.SetActive(true);
+        StartCoroutine(SpeedAlt());
 
         if (LevelManager.Instance.type == LevelManager.TerrainType.FOOD)
         {
@@ -152,6 +167,8 @@ public class TriggerEvent : MonoBehaviour
             foreach (string buttonText in EnemyManager.Instance.enemyList1[whatEnemy].GetComponent<Enemy>().answer)
             {
                 ButtonManager.Instance.promptText.GetComponent<TextMeshProUGUI>().text = EnemyManager.Instance.enemyList1[whatEnemy].GetComponent<Enemy>().setup;
+
+                ButtonManager.Instance.theAnswers.Add(buttonText);
 
                 int i = Random.Range(0, ButtonManager.Instance.buttons.Count);
 
@@ -221,5 +238,16 @@ public class TriggerEvent : MonoBehaviour
                 ButtonManager.Instance.buttons[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().text = buttonText;
             }
         }
+    }
+
+    IEnumerator SpeedAlt()
+    {
+        Debug.Log("SpeedAlt");
+
+        ButtonManager.Instance.enviornmentManager.GetComponent<EnviromentMovement>().moveSpeed -= 6;
+
+        yield return new WaitForSeconds(ButtonManager.Instance.speedUpLength);
+
+        ButtonManager.Instance.enviornmentManager.GetComponent<EnviromentMovement>().moveSpeed += 6;
     }
 }

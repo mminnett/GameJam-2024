@@ -904,10 +904,8 @@ MonoBehaviour:
   - {fileID: 1678090355371423413, guid: 6f01f07330608ae44bbf344053c6408d, type: 3}
   - {fileID: 1678090355371423413, guid: 2cedc2ce0cfa7bc4fb98b7b3daf98dcf, type: 3}
   bossTerrain:
-  - {fileID: 1678090355371423413, guid: 4ce4d5fffd0afb44c981c2865805f8b3, type: 3}
-  - {fileID: 1678090355371423413, guid: ae50e363cbcaa3d4fb1313e2565286f9, type: 3}
-  - {fileID: 1678090355371423413, guid: 9c2e8b6da4407594c97e179e9eb3ea6d, type: 3}
-  - {fileID: 1678090355371423413, guid: f4b8685831594214cb5eae75460d1969, type: 3}
+  - {fileID: 1678090355371423413, guid: 55adff0ac19eeb64f84c416eb6e38a0c, type: 3}
+  - {fileID: 1678090355371423413, guid: 8ba832c3a8bca7645aca0d889ea45212, type: 3}
   startPoint: {fileID: 1754628396}
 --- !u!4 &245736924
 Transform:
@@ -1512,7 +1510,7 @@ GameObject:
   - component: {fileID: 448729080}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3443,6 +3441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1467718366}
   - component: {fileID: 1467718365}
+  - component: {fileID: 1467718367}
   m_Layer: 0
   m_Name: Button Controller
   m_TagString: Untagged
@@ -3476,6 +3475,12 @@ MonoBehaviour:
   speachBox: {fileID: 158480873}
   speachBoxPoint: {fileID: 1014814201}
   promptText: {fileID: 125137175}
+  enviornmentManager: {fileID: 1754628394}
+  speedUpLength: 3.3
+  hasCollided: 0
+  theButtonText: 
+  theAnswers: []
+  enemyIsDead: 0
 --- !u!4 &1467718366
 Transform:
   m_ObjectHideFlags: 0
@@ -3491,6 +3496,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1467718367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467718364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38092703611d6747b25ba8dadce6388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1469780171
 GameObject:
   m_ObjectHideFlags: 0
@@ -4778,7 +4795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0288542bba06dbc49bc0749368185a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 7.8
   waitTime: 1
   canMove: 0
 --- !u!4 &1754628396

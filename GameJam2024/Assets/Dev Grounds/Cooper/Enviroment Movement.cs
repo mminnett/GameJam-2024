@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnviromentMovement : MonoBehaviour
 {
-    [Range(0f, 20f)]
-    [SerializeField] private float moveSpeed;
+    [Range(0f, 50f)]
+    [SerializeField] public float moveSpeed;
     [SerializeField] private float waitTime;
 
     public bool canMove;
