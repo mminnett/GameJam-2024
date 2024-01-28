@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TriggerEvent : MonoBehaviour
 {
+    
     public enum eventType {ENEMY, JUMP, SLIDE, START, FINISH}
 
     public eventType type;
@@ -12,8 +13,10 @@ public class TriggerEvent : MonoBehaviour
     public bool isTriggered;
 
     [SerializeField] private Transform enemySpawn;
-    private List<GameObject> enemy = EnemyManager.Instance.enemyList1;  
-
+    private List<GameObject> enemy1 = EnemyManager.Instance.enemyList1;
+    private List<GameObject> enemy2 = EnemyManager.Instance.enemyList2;
+    private List<GameObject> enemy3 = EnemyManager.Instance.enemyList3;
+    private List<GameObject> enemy4 = EnemyManager.Instance.enemyList4;
 
     private GameObject parent;
 
@@ -25,16 +28,7 @@ public class TriggerEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (parent.tag == "EnemyTerrain")
-        {
-            if (EnemyManager.Instance.enemyList1.Count > 0)
-            {
-                int i = Random.Range(0, enemy.Count);
-                Debug.Log("Spawn 'Enemy'");
-                Instantiate(EnemyManager.Instance.enemyList1[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
-                EnemyManager.Instance.enemyList1.Remove(EnemyManager.Instance.enemyList1[i]);
-            }
-        }
+      
     }
 
     // Update is called once per frame
@@ -43,12 +37,13 @@ public class TriggerEvent : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         switch (type)
         {
             case eventType.ENEMY:
-                
+                Debug.Log("Enemy trigger");
+                EnemyPick();
                 break;
 
             case eventType.JUMP:
@@ -66,6 +61,65 @@ public class TriggerEvent : MonoBehaviour
             case eventType.FINISH:
                 
                 break;
+        }
+    }
+
+    private void EnemyPick()
+    {
+        if (parent.tag == "EnemyTerrain" && LevelManager.Instance.type == LevelManager.TerrainType.FOOD)
+        {
+            if (EnemyManager.Instance.enemyList1.Count > 0)
+            {
+                int i = Random.Range(0, enemy1.Count);
+                Debug.Log("Spawn 'Enemy'");
+                Instantiate(EnemyManager.Instance.enemyList1[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                EnemyManager.Instance.enemyList1.Remove(EnemyManager.Instance.enemyList1[i]);
+            }
+            else
+            {
+                LevelManager.Instance.type = LevelManager.TerrainType.MEDIEVAL;
+            }
+        }
+
+        else if (parent.tag == "EnemyTerrain" && LevelManager.Instance.type == LevelManager.TerrainType.MEDIEVAL)
+        {
+            if (EnemyManager.Instance.enemyList2.Count > 0)
+            {
+                int i = Random.Range(0, enemy2.Count);
+                Debug.Log("Spawn 'Enemy'");
+                Instantiate(EnemyManager.Instance.enemyList2[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                EnemyManager.Instance.enemyList2.Remove(EnemyManager.Instance.enemyList2[i]);
+            }
+            else
+            {
+                LevelManager.Instance.type = LevelManager.TerrainType.MODERN;
+            }
+        }
+
+        else if (parent.tag == "EnemyTerrain" && LevelManager.Instance.type == LevelManager.TerrainType.MODERN)
+        {
+            if (EnemyManager.Instance.enemyList3.Count > 0)
+            {
+                int i = Random.Range(0, enemy3.Count);
+                Debug.Log("Spawn 'Enemy'");
+                Instantiate(EnemyManager.Instance.enemyList3[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                EnemyManager.Instance.enemyList3.Remove(EnemyManager.Instance.enemyList3[i]);
+            }
+            else
+            {
+                LevelManager.Instance.type = LevelManager.TerrainType.SCIFI;
+            }
+        }
+
+        else if (parent.tag == "EnemyTerrain" && LevelManager.Instance.type == LevelManager.TerrainType.SCIFI)
+        {
+            if (EnemyManager.Instance.enemyList4.Count > 0)
+            {
+                int i = Random.Range(0, enemy4.Count);
+                Debug.Log("Spawn 'Enemy'");
+                Instantiate(EnemyManager.Instance.enemyList4[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                EnemyManager.Instance.enemyList4.Remove(EnemyManager.Instance.enemyList4[i]);
+            }
         }
     }
 }

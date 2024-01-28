@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     private static EnemyManager instance;
+
+
     public static EnemyManager Instance 
     { 
         get  
