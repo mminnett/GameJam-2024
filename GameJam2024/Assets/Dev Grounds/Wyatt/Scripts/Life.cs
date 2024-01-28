@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Life : MonoBehaviour
 {
+    private int amtLeft = 0;
 
     [SerializeField] List<Image> lives;
     SpriteRenderer playerColour;
@@ -18,6 +19,7 @@ public class Life : MonoBehaviour
         {
             life.gameObject.SetActive(true);
             playerColour = GetComponent<SpriteRenderer>();
+            amtLeft++;
         }
     }
 
@@ -34,15 +36,15 @@ public class Life : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            int amtLeft = -1;
-            foreach (Image life in lives)
-            {
-                amtLeft++;
-            }
+            amtLeft -= 1;
+           
 
             foreach (GameObject button in ButtonManager.Instance.buttons)
             {
-                button.gameObject.SetActive(false);
+                if (button.activeSelf == true)
+                {
+                    button.GetComponent<TextBoxes>().StartWaitTimer(true);
+                }
             }
 
             ButtonManager.Instance.speachBox.SetActive(false);
@@ -52,7 +54,9 @@ public class Life : MonoBehaviour
             Debug.Log("Och");
             lives[amtLeft].gameObject.SetActive(false);
             StartCoroutine(Flash());
-            lives.Remove(lives[amtLeft]);
+            //lives.Remove(lives[amtLeft]);
+
+            collision.gameObject.SetActive(false);
         }
     }
 

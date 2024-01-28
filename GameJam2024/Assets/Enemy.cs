@@ -21,8 +21,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    [SerializeField] private TriggerEvent triggerEvent;
-    [SerializeField] private TextMeshPro textObject;
+    public ButtonManager btnManager;
     [SerializeField] private GameObject setupText;
 
     [SerializeField] private int enemyId;
@@ -36,21 +35,11 @@ public class Enemy : MonoBehaviour
             instance = this;
         }
 
-        textObject.text = setup;
+        //textObject.text = setup;
     }
 
-    private void Update()
+    public void Kill()
     {
-        if (triggerEvent.isTriggered == true && triggerEvent.type == TriggerEvent.eventType.ENEMY)
-        {
-            if(setup != "")
-            {
-                setupText.SetActive(true);
-            }
-            else
-            {
-                setupText.SetActive(false);
-            }
-        }
+        Destroy(gameObject);
     }
 }

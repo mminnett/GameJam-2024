@@ -48,7 +48,8 @@ public class TriggerEvent : MonoBehaviour
         if (ButtonManager.Instance.enemyIsDead) 
         {
             Debug.Log("They Be dead");
-        whoYouWantDead.gameObject.SetActive(false);
+            ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().Kill();
+            ButtonManager.Instance.enemyIsDead = false;
         }
     }
 
@@ -57,7 +58,7 @@ public class TriggerEvent : MonoBehaviour
         switch (type)
         {
             case eventType.ENEMY:
-                ButtonManager.Instance.enemyIsDead = false;
+                //ButtonManager.Instance.enemyIsDead = false;
                 ButtonManager.Instance.theAnswers.Clear();
                 ButtonManager.Instance.hasCollided = false;
                 BackgroundManager.Instance.triggerCount++;
@@ -91,11 +92,13 @@ public class TriggerEvent : MonoBehaviour
             {
                 int i = Random.Range(0, enemy1.Count);
                 whatEnemy = i;
-                whoYouWantDead = EnemyManager.Instance.enemyList1[i];
                 SetUpButtons();
                 Debug.Log("Spawn 'Enemy'");
-                Instantiate(EnemyManager.Instance.enemyList1[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                ButtonManager.Instance.activeEnemy = Instantiate(EnemyManager.Instance.enemyList1[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                ButtonManager.Instance.activeEnemy.gameObject.SetActive(true);
+                ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().btnManager = ButtonManager.Instance.GetComponent<ButtonManager>();
                 EnemyManager.Instance.enemyList1.Remove(EnemyManager.Instance.enemyList1[i]);
+                whoYouWantDead = ButtonManager.Instance.activeEnemy;
             }
             else
             {
@@ -112,8 +115,11 @@ public class TriggerEvent : MonoBehaviour
                 whoYouWantDead = EnemyManager.Instance.enemyList2[i];
                 SetUpButtons();
                 Debug.Log("Spawn 'Enemy'");
-                Instantiate(EnemyManager.Instance.enemyList2[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                ButtonManager.Instance.activeEnemy = Instantiate(EnemyManager.Instance.enemyList2[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                ButtonManager.Instance.activeEnemy.gameObject.SetActive(true);
+                ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().btnManager = ButtonManager.Instance.GetComponent<ButtonManager>();
                 EnemyManager.Instance.enemyList2.Remove(EnemyManager.Instance.enemyList2[i]);
+                whoYouWantDead = ButtonManager.Instance.activeEnemy;
             }
             else
             {
@@ -130,8 +136,11 @@ public class TriggerEvent : MonoBehaviour
                 whoYouWantDead = EnemyManager.Instance.enemyList3[i];
                 SetUpButtons();
                 Debug.Log("Spawn 'Enemy'");
-                Instantiate(EnemyManager.Instance.enemyList3[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                ButtonManager.Instance.activeEnemy = Instantiate(EnemyManager.Instance.enemyList3[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                ButtonManager.Instance.activeEnemy.gameObject.SetActive(true);
+                ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().btnManager = ButtonManager.Instance.GetComponent<ButtonManager>();
                 EnemyManager.Instance.enemyList3.Remove(EnemyManager.Instance.enemyList3[i]);
+                whoYouWantDead = ButtonManager.Instance.activeEnemy;
             }
             else
             {
@@ -148,8 +157,11 @@ public class TriggerEvent : MonoBehaviour
                 whoYouWantDead = EnemyManager.Instance.enemyList4[i];
                 SetUpButtons();
                 Debug.Log("Spawn 'Enemy'");
-                Instantiate(EnemyManager.Instance.enemyList4[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                ButtonManager.Instance.activeEnemy = Instantiate(EnemyManager.Instance.enemyList4[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                ButtonManager.Instance.activeEnemy.gameObject.SetActive(true);
+                ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().btnManager = ButtonManager.Instance.GetComponent<ButtonManager>();
                 EnemyManager.Instance.enemyList4.Remove(EnemyManager.Instance.enemyList4[i]);
+                whoYouWantDead = ButtonManager.Instance.activeEnemy;
             }
         }
     }

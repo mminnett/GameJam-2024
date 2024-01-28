@@ -30,6 +30,7 @@ public class ButtonManager : MonoBehaviour
     public string theButtonText;
     public List<string> theAnswers;
     public bool enemyIsDead;
+    public GameObject activeEnemy;
 
     private void Start()
     {
