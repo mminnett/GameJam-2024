@@ -749,31 +749,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   terrainPrefabs_1:
-  - {fileID: 1678090355371423413, guid: 0df0f2e675c755147af86881298f9017, type: 3}
-  - {fileID: 1678090355371423413, guid: bea9f04fd65695f44a88609c51fa9b0e, type: 3}
-  - {fileID: 1678090355371423413, guid: 5682968d74061694dbdb581bf385eb5a, type: 3}
+  - {fileID: 1678090355371423413, guid: 7ea96ef244a99394d8adf98d3e76dbee, type: 3}
+  - {fileID: 1678090355371423413, guid: ce118cc2550c9864a8668ea02d247ed3, type: 3}
+  - {fileID: 1678090355371423413, guid: d5d2259c72c8b2c459ec409fcecf232b, type: 3}
   terrainPrefabs_2:
-  - {fileID: 1678090355371423413, guid: d712dd0ebf284d64cbf12ab284d624b5, type: 3}
-  - {fileID: 1678090355371423413, guid: aa7d5da86e24d504b89a0362f00a116f, type: 3}
-  - {fileID: 1678090355371423413, guid: 598dc54c46d9c5a4aadebd6241936cbc, type: 3}
+  - {fileID: 1678090355371423413, guid: 819ee003dda7f8a47ac46a5b262754e4, type: 3}
+  - {fileID: 1678090355371423413, guid: 9d7b8eeb9328a4f498c0fca3605b65a5, type: 3}
+  - {fileID: 1678090355371423413, guid: 80dbc534de527f84bb564154d72727a2, type: 3}
   terrainPrefabs_3:
-  - {fileID: 1678090355371423413, guid: a8721b96b309add49aa7eb178c4efaa3, type: 3}
-  - {fileID: 1678090355371423413, guid: b0569bf225eb8714c87548e22346f714, type: 3}
-  - {fileID: 1678090355371423413, guid: ba5bbdf1be96ff442b8314bc4de817cd, type: 3}
+  - {fileID: 1678090355371423413, guid: 6f8f643d21aa9514284a37627dcf166b, type: 3}
+  - {fileID: 1678090355371423413, guid: ea7563d7b0430fa40b4fd2736d125a54, type: 3}
+  - {fileID: 1678090355371423413, guid: 98756b5fff2b73a4a9cb174e0da427b2, type: 3}
   terrainPrefabs_4:
   - {fileID: 1678090355371423413, guid: b00e5a814e96dcc4bbf4fbbc49ac4d63, type: 3}
   - {fileID: 1678090355371423413, guid: b415dadfba4ee8d44be3f74cba0d8176, type: 3}
   - {fileID: 1678090355371423413, guid: ee72f19f84918364387a52919f106b86, type: 3}
   startingTerrain:
-  - {fileID: 1678090355371423413, guid: 313341e92efe4c94a812749cc0a1a3c5, type: 3}
-  - {fileID: 1678090355371423413, guid: b89f1215bc2713d419ac9dd57280d2e1, type: 3}
-  - {fileID: 1678090355371423413, guid: a750ec5c5a48ffe4eac91d4b52fff8d5, type: 3}
-  - {fileID: 1678090355371423413, guid: 8cc7199873b9b2c459bb4a0cd6bf8869, type: 3}
+  - {fileID: 1678090355371423413, guid: d6266984d63a6f947a5f363fbe24117a, type: 3}
+  - {fileID: 1678090355371423413, guid: 7afdb6b45d24e3545b785e4b50aaa3ca, type: 3}
+  - {fileID: 1678090355371423413, guid: 6f01f07330608ae44bbf344053c6408d, type: 3}
+  - {fileID: 1678090355371423413, guid: 2cedc2ce0cfa7bc4fb98b7b3daf98dcf, type: 3}
   bossTerrain:
-  - {fileID: 1678090355371423413, guid: f147c6adce3167a408a361c9020ba984, type: 3}
-  - {fileID: 1678090355371423413, guid: abf61ffcf4b5d5849b1b8e35657dc0b1, type: 3}
-  - {fileID: 1678090355371423413, guid: 3c4d1fbac6612a245848e15781ae4c7a, type: 3}
-  - {fileID: 1678090355371423413, guid: eb9460d4c865656479cbff04f1c690d0, type: 3}
+  - {fileID: 1678090355371423413, guid: 4ce4d5fffd0afb44c981c2865805f8b3, type: 3}
+  - {fileID: 1678090355371423413, guid: ae50e363cbcaa3d4fb1313e2565286f9, type: 3}
+  - {fileID: 1678090355371423413, guid: 9c2e8b6da4407594c97e179e9eb3ea6d, type: 3}
+  - {fileID: 1678090355371423413, guid: f4b8685831594214cb5eae75460d1969, type: 3}
   startPoint: {fileID: 1754628396}
 --- !u!4 &245736924
 Transform:
@@ -1496,7 +1496,7 @@ Transform:
   m_GameObject: {fileID: 792684508}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 40}
   m_LocalScale: {x: 18, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4005,7 +4005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0288542bba06dbc49bc0749368185a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 2
   waitTime: 1
   canMove: 0
 --- !u!4 &1754628396
