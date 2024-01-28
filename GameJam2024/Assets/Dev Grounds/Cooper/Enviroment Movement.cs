@@ -13,15 +13,15 @@ public class EnviromentMovement : MonoBehaviour
     private void Start()
     {
         canMove = false;
+        StartCoroutine(WaitToMove());
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(WaitToMove());
-
         if (canMove)
             transform.position += new Vector3(-1 * moveSpeed * Time.deltaTime, 0, 0);
+            
     }
 
     IEnumerator WaitToMove()

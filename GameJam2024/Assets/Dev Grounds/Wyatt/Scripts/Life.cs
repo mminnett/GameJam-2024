@@ -40,6 +40,15 @@ public class Life : MonoBehaviour
                 amtLeft++;
             }
 
+            foreach (GameObject button in ButtonManager.Instance.buttons)
+            {
+                button.gameObject.SetActive(false);
+            }
+
+            ButtonManager.Instance.speachBox.SetActive(false);
+            ButtonManager.Instance.speachBoxPoint.SetActive(false);
+            ButtonManager.Instance.promptText.SetActive(false);
+
             Debug.Log("Och");
             lives[amtLeft].gameObject.SetActive(false);
             StartCoroutine(Flash());

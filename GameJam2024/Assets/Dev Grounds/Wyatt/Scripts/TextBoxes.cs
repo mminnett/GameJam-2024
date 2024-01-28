@@ -11,6 +11,11 @@ public class TextBoxes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     Vector3 endPosition;
     [SerializeField] float waitTimer = 4;
 
+    public void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         itemBeingDragged = gameObject;
