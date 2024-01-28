@@ -55,6 +55,38 @@ PrefabInstance:
       propertyPath: enemySpawn
       value: 
       objectReference: {fileID: 6624084041247559344}
+    - target: {fileID: 4821371592049179247, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
+      propertyPath: enemy.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821371592049179247, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
+      propertyPath: enemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 3090833640109020603, guid: 547610140d3ef6f46b67e0dee2b4537e, type: 3}
+    - target: {fileID: 4821371592049179247, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
+      propertyPath: enemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 3090833640109020603, guid: 27e8016cdc8a52844bfe53d3e2e3b4c9, type: 3}
+    - target: {fileID: 4821371592049179247, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
+      propertyPath: enemy.Array.data[2]
+      value: 
+      objectReference: {fileID: 3090833640109020603, guid: de59fe8c597dd16499b030a6703f3279, type: 3}
+    - target: {fileID: 4821371592049179247, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
+      propertyPath: enemy.Array.data[3]
+      value: 
+      objectReference: {fileID: 3090833640109020603, guid: 47c6b5867c244864c827e5bb0dd5b99c, type: 3}
+    - target: {fileID: 4821371592049179247, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
+      propertyPath: enemy.Array.data[4]
+      value: 
+      objectReference: {fileID: 3090833640109020603, guid: ad2a487b0e1f4a84db8b7e024b5faad0, type: 3}
+    - target: {fileID: 4821371592049179247, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
+      propertyPath: enemy.Array.data[5]
+      value: 
+      objectReference: {fileID: 3090833640109020603, guid: ebe0ec6c1bc3d5f45b0a70a990eddc9e, type: 3}
+    - target: {fileID: 4821371592049179247, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
+      propertyPath: enemy.Array.data[6]
+      value: 
+      objectReference: {fileID: 3090833640109020603, guid: ebe0ec6c1bc3d5f45b0a70a990eddc9e, type: 3}
     - target: {fileID: 5237797112651634301, guid: d646865d9f2f53c4d8c3484b21a9519a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

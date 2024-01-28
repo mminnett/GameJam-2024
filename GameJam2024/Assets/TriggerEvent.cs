@@ -12,7 +12,8 @@ public class TriggerEvent : MonoBehaviour
     public bool isTriggered;
 
     [SerializeField] private Transform enemySpawn;
-    [SerializeField] private GameObject enemy; 
+    private List<GameObject> enemy = EnemyManager.Instance.enemyList1;  
+
 
     private GameObject parent;
 
@@ -26,8 +27,13 @@ public class TriggerEvent : MonoBehaviour
     {
         if (parent.tag == "EnemyTerrain")
         {
-            Debug.Log("Spawn 'Enemy'");
-            Instantiate(enemy, new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+            if (EnemyManager.Instance.enemyList1.Count > 0)
+            {
+                int i = Random.Range(0, enemy.Count);
+                Debug.Log("Spawn 'Enemy'");
+                Instantiate(EnemyManager.Instance.enemyList1[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
+                EnemyManager.Instance.enemyList1.Remove(EnemyManager.Instance.enemyList1[i]);
+            }
         }
     }
 
