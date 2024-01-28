@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int enemyId;
 
     [SerializeField] private string setup;
-    [SerializeField] private string answer;
+    [SerializeField] private List<string> answer;
     private void Start()
     {
         textObject.text = setup;

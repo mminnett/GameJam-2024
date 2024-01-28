@@ -13,16 +13,21 @@ public class TriggerEvent : MonoBehaviour
     public bool isTriggered;
 
     [SerializeField] private Transform enemySpawn;
-    private List<GameObject> enemy1 = EnemyManager.Instance.enemyList1;
-    private List<GameObject> enemy2 = EnemyManager.Instance.enemyList2;
-    private List<GameObject> enemy3 = EnemyManager.Instance.enemyList3;
-    private List<GameObject> enemy4 = EnemyManager.Instance.enemyList4;
+    private List<GameObject> enemy1;
+    private List<GameObject> enemy2;
+    private List<GameObject> enemy3;
+    private List<GameObject> enemy4;
 
     private GameObject parent;
 
     private void Awake()
     {
         parent = transform.parent.gameObject;
+
+        enemy1 = EnemyManager.Instance.enemyList1;
+        enemy2 = EnemyManager.Instance.enemyList2;
+        enemy3 = EnemyManager.Instance.enemyList3;
+        enemy4 = EnemyManager.Instance.enemyList4;
     }
 
     // Start is called before the first frame update

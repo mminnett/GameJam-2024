@@ -78,7 +78,7 @@ public class LevelManager : MonoBehaviour
         /////////////////////////////////////
         Debug.Log("Terrain Created MEDIEVAL");
 
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i <= 12; i++)
         {
             nextPos = lastPos + new Vector3(20, 0, 0);
 
@@ -98,7 +98,7 @@ public class LevelManager : MonoBehaviour
         /////////////////////////////////////
         Debug.Log("Terrain Created MODERN");
 
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i <= 12; i++)
         {
             nextPos = lastPos + new Vector3(20, 0, 0);
 
@@ -118,7 +118,7 @@ public class LevelManager : MonoBehaviour
         /////////////////////////////////////
         Debug.Log("Terrain Created SCIFI");
 
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i <= 12; i++)
         {
             nextPos = lastPos + new Vector3(20, 0, 0);
 

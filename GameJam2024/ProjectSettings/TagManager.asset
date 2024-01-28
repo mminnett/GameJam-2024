@@ -6,6 +6,12 @@ TagManager:
   tags:
   - GameZone
   - Button
+  - EnemyTerrain
+  - JumpTerrain
+  - SlideTerrain
+  - StartTerrain
+  - BossTerrain
+  - Enemy
   layers:
   - Default
   - TransparentFX
