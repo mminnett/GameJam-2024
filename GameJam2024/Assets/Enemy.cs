@@ -5,16 +5,37 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
+    private static Enemy instance;
+
+    public static Enemy Instance
+    {
+        get
+        {
+
+            if (instance == null)
+            {
+                instance = FindObjectOfType<Enemy>();
+            }
+            return instance;
+        }
+    }
+
     [SerializeField] private TriggerEvent triggerEvent;
     [SerializeField] private TextMeshPro textObject;
     [SerializeField] private GameObject setupText;
 
     [SerializeField] private int enemyId;
 
-    [SerializeField] private string setup;
-    [SerializeField] private List<string> answer;
+    [SerializeField] public string setup;
+    [SerializeField] public List<string> answer;
     private void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
         textObject.text = setup;
     }
 
