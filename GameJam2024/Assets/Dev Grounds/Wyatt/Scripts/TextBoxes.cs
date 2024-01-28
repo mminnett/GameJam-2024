@@ -50,7 +50,7 @@ public class TextBoxes : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         buttonCollider.SetActive(false);
     }
 
-    public IEnumerator WaitTime()
+    IEnumerator WaitTime()
     {
 
         yield return new WaitForSeconds(waitTimer);

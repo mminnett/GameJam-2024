@@ -7,21 +7,25 @@ public class Life : MonoBehaviour
 {
 
     [SerializeField] List<Image> lives;
+    SpriteRenderer playerColour;
+
+    [SerializeField] private float hitTimer;
 
     // Start is called before the first frame update
     void Awake()
     {
-        foreach (Image life in lives) 
-        { 
-        life.enabled = true; 
+        foreach (Image life in lives)
+        {
+            life.gameObject.SetActive(true);
+            playerColour = GetComponent<SpriteRenderer>();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lives.Count <= 0) 
-        { 
+        if (lives.Count <= 0)
+        {
             //Activate end game
         }
     }
@@ -37,7 +41,18 @@ public class Life : MonoBehaviour
             }
 
             Debug.Log("Och");
+            lives[amtLeft].gameObject.SetActive(false);
+            StartCoroutine(Flash());
             lives.Remove(lives[amtLeft]);
         }
+    }
+
+    IEnumerator Flash()
+    {
+        playerColour.color = Color.red;
+
+        yield return new WaitForSeconds(hitTimer);
+
+        playerColour.color = Color.white;
     }
 }
