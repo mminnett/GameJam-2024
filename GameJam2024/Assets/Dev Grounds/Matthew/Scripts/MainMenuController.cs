@@ -29,12 +29,17 @@ public class MainMenuController : MonoBehaviour
     [SerializeField, Tooltip("End position to move quit button to")]
     private Transform endPosQuit;
 
+    [SerializeField]
+    private List<GameObject> textElements;
+
     private void Start()
     {
         title.GetComponent<UnityEngine.UI.Image>().color = new Color(1, 1, 1, 0);
 
         StartCoroutine(WaitForAnimation());
         StartCoroutine(FadeTitle());
+
+        foreach (GameObject go in textElements) { go.SetActive(false); }
     }
 
     private IEnumerator FadeTitle()
@@ -59,6 +64,8 @@ public class MainMenuController : MonoBehaviour
 
         StartCoroutine(MoveButton(startBtn, endPosStart.position));
         StartCoroutine(MoveButton(quitBtn, endPosQuit.position));
+
+        foreach(GameObject go in textElements) { go.SetActive(true); }
     }
 
     /// <summary>
@@ -85,7 +92,7 @@ public class MainMenuController : MonoBehaviour
     /// </summary>
     public void StartButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     /// <summary>

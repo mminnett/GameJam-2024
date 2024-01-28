@@ -11,6 +11,16 @@ public class BossTriggerEvent : MonoBehaviour
 
     [SerializeField] private Transform bossEndPos;
 
+    [SerializeField]
+    private GameObject clownArmL;
+    [SerializeField] 
+    private GameObject clownArmR;
+
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip clownLaugh;
+
     private EnviromentMovement check;
     private GameObject parent;
     private GameObject player;
@@ -26,6 +36,9 @@ public class BossTriggerEvent : MonoBehaviour
 
         clownBorder = GameObject.FindGameObjectWithTag("Frame").GetComponent<Animator>();
         clownBoss = GameObject.FindGameObjectWithTag("ClownBoss").GetComponent <Animator>();
+
+        clownArmL.SetActive(false);
+        clownArmR.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -76,9 +89,16 @@ public class BossTriggerEvent : MonoBehaviour
         }
         targetObject.transform.position = endPos;
 
-        if(targetObject == player)
+        if (targetObject == player)
             targetObject.gameObject.GetComponent<Animator>().SetTrigger("StopRun");
-        else if(targetObject == bossObject)
+        else if (targetObject == bossObject)
+        {
             clownBoss.SetTrigger("ClownTime");
+
+            audioSource.PlayOneShot(clownLaugh);
+
+            clownArmL.SetActive(true);
+            clownArmR.SetActive(true);
+        }
     }
 }

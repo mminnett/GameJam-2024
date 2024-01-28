@@ -12,6 +12,12 @@ public class Life : MonoBehaviour
 
     [SerializeField] private float hitTimer;
 
+    [SerializeField]
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private List<AudioClip> painClips;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -54,6 +60,9 @@ public class Life : MonoBehaviour
             Debug.Log("Och");
             lives[amtLeft].gameObject.SetActive(false);
             StartCoroutine(Flash());
+
+            audioSource.PlayOneShot(painClips[Random.Range(0, painClips.Count)]);
+
             //lives.Remove(lives[amtLeft]);
 
             collision.gameObject.SetActive(false);
