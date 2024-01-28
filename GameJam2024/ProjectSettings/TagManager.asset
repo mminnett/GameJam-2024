@@ -12,6 +12,8 @@ TagManager:
   - StartTerrain
   - BossTerrain
   - Enemy
+  - Frame
+  - ClownBoss
   layers:
   - Default
   - TransparentFX

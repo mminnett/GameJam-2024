@@ -6,32 +6,43 @@ using UnityEngine.UI;
 public class BossTriggerEvent : MonoBehaviour
 {
     public bool isTriggered;
-    [SerializeField] private Transform BossSpawn;
-    [SerializeField] private GameObject BossPrefab;
+    [SerializeField] private GameObject bossObject;
     [SerializeField] private Transform playerEndPos;
+
+    [SerializeField] private Transform bossEndPos;
+
     private EnviromentMovement check;
     private GameObject parent;
     private GameObject player;
+
+    private Animator clownBorder;
+    private Animator clownBoss;
 
     void Start()
     {
         parent = transform.parent.gameObject;
 
         check = FindObjectOfType<EnviromentMovement>();
+
+        clownBorder = GameObject.FindGameObjectWithTag("Frame").GetComponent<Animator>();
+        clownBoss = GameObject.FindGameObjectWithTag("ClownBoss").GetComponent <Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Instantiate(BossPrefab, new Vector3(BossSpawn.position.x, BossSpawn.position.y + 1, BossSpawn.position.z), Quaternion.identity, parent.transform);
-        if (check != null)
+        if (other.gameObject.tag == "Player")
         {
-            check.canMove = false;
-        }
+            clownBorder.SetTrigger("BossTrigger");
 
-        if(other.gameObject.tag == "Player")
-        {
+            StartCoroutine(WaitToInstantiate());
+
+            if (check != null)
+            {
+                check.canMove = false;
+            }
+
             player = other.gameObject;
-            StartCoroutine(PlayerLurp(player, playerEndPos.position));
+            StartCoroutine(Lurp(player, playerEndPos.position));
         }
     }
 
@@ -43,17 +54,31 @@ public class BossTriggerEvent : MonoBehaviour
         }
     }
 
-    IEnumerator PlayerLurp(GameObject player, Vector2 endPos)
+    private IEnumerator WaitToInstantiate()
+    {
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(Lurp(bossObject, bossEndPos.position));
+    }
+
+    IEnumerator Lurp(GameObject targetObject, Vector2 endPos)
     {
         float elpasedTime = 0;
-        float lerpDur = 4.0f;
+        float lerpDur = 2.0f;
+
+        Vector2 startPos = targetObject.transform.position;
+
         while (elpasedTime < lerpDur)
         {
-            player.transform.position = Vector2.Lerp(player.transform.position, endPos, elpasedTime / lerpDur);
+            targetObject.transform.position = Vector2.Lerp(startPos, endPos, elpasedTime / lerpDur);
             elpasedTime += Time.deltaTime;
             yield return null;
         }
-        player.transform.position = endPos;
-    }
+        targetObject.transform.position = endPos;
 
+        if(targetObject == player)
+            targetObject.gameObject.GetComponent<Animator>().SetTrigger("StopRun");
+        else if(targetObject == bossObject)
+            clownBoss.SetTrigger("ClownTime");
+    }
 }
