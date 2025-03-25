@@ -22,7 +22,7 @@ public class Action : MonoBehaviour
         }
     }
 
-    private int startpoint;
+    public int startpoint;
 
     // Start is called before the first frame update
     void Start()

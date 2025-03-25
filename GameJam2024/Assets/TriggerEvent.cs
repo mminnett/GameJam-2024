@@ -62,6 +62,7 @@ public class TriggerEvent : MonoBehaviour
                 ButtonManager.Instance.theAnswers.Clear();
                 ButtonManager.Instance.hasCollided = false;
                 BackgroundManager.Instance.triggerCount++;
+                Action.Instance.startpoint = 0;
                 Debug.Log("Enemy trigger");
                 EnemyPick();
                 break;
