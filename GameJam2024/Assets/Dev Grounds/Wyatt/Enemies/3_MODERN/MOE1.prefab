@@ -131,11 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff598ee807b2b4f8429ebbcd3741fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 0}
-  textObject: {fileID: 0}
+  btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
   setup: I had a taser once, ____ ____ ____ ____
+  setup2: I had a taser once, IT ____ ____ ____
+  setup3: I had a taser once, IT WAS ____ ____
+  setup4: I had a taser once, IT WAS SUPER ____
+  setup5: I had a taser once, IT WAS SUPER STUNNING!
+  setup6: I had a taser once, IT WAS SUPER STUNNING!
+  setup7: I had a taser once, IT WAS SUPER STUNNING!
   answer:
   - it
   - was

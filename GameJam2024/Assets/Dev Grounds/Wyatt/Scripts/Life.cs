@@ -43,7 +43,7 @@ public class Life : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             amtLeft -= 1;
-           
+
 
             foreach (GameObject button in ButtonManager.Instance.buttons)
             {
@@ -60,6 +60,8 @@ public class Life : MonoBehaviour
             Debug.Log("Och");
             lives[amtLeft].gameObject.SetActive(false);
             StartCoroutine(Flash());
+
+            ButtonManager.Instance.enviornmentManager.GetComponent<EnviromentMovement>().moveSpeed = 7.8f;
 
             audioSource.PlayOneShot(painClips[Random.Range(0, painClips.Count)]);
 

@@ -131,11 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff598ee807b2b4f8429ebbcd3741fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 0}
-  textObject: {fileID: 0}
+  btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
-  setup: What to call a self-employed spearman?
+  setup: 'What to call a self-employed spearman?  ____   ____   ____ '
+  setup2: 'What to call a self-employed spearman? A   ____   ____ '
+  setup3: 'What to call a self-employed spearman? A FREE   ____ '
+  setup4: 'What to call a self-employed spearman? A FREE LANCER '
+  setup5: 'What to call a self-employed spearman? A FREE LANCER '
+  setup6: 'What to call a self-employed spearman? A FREE LANCER '
+  setup7: 'What to call a self-employed spearman? A FREE LANCER '
   answer:
   - A
   - free

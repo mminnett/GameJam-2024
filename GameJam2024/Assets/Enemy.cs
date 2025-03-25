@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -27,6 +25,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int enemyId;
 
     [SerializeField] public string setup;
+    [SerializeField] public string setup2;
+    [SerializeField] public string setup3;
+    [SerializeField] public string setup4;
+    [SerializeField] public string setup5;
+    [SerializeField] public string setup6;
+    [SerializeField] public string setup7;
     [SerializeField] public List<string> answer;
     private void Start()
     {

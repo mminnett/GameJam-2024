@@ -131,11 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff598ee807b2b4f8429ebbcd3741fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 0}
-  textObject: {fileID: 0}
+  btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
-  setup: Becoming a space pilot isin't easy!
+  setup: Becoming a space pilot isin't easy! _____ _____ _____ _____ _____
+  setup2: Becoming a space pilot isin't easy! IT _____ _____ _____ _____
+  setup3: Becoming a space pilot isin't easy! IT REQUIRES _____ _____ _____
+  setup4: Becoming a space pilot isin't easy! IT REQUIRES A _____ _____
+  setup5: Becoming a space pilot isin't easy! IT REQUIRES A GOOD _____
+  setup6: Becoming a space pilot isin't easy! IT REQUIRES A GOOD ALTITUDE!
+  setup7: Becoming a space pilot isin't easy! IT REQUIRES A GOOD ALTITUDE!
   answer:
   - It
   - requires

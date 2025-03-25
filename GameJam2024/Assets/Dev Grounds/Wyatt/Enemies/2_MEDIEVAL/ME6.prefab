@@ -131,11 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff598ee807b2b4f8429ebbcd3741fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 0}
-  textObject: {fileID: 0}
+  btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
   setup: Medieval cures ____ ____ ____ ____
+  setup2: Medieval cures WERE ____ ____ ____
+  setup3: Medieval cures WERE LEECHES ____ ____
+  setup4: Medieval cures WERE LEECHES ON ____
+  setup5: Medieval cures WERE LEECHES ON SOCIETY!
+  setup6: Medieval cures WERE LEECHES ON SOCIETY!
+  setup7: Medieval cures WERE LEECHES ON SOCIETY!
   answer:
   - were
   - leeches

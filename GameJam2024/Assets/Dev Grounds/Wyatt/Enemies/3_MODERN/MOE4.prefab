@@ -131,11 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff598ee807b2b4f8429ebbcd3741fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 0}
-  textObject: {fileID: 0}
+  btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
-  setup: I read a book about helium.
+  setup: I read a book about helium. ____ ____ ____ ____ ____
+  setup2: I read a book about helium. I ____ ____ ____ ____
+  setup3: I read a book about helium. I COULDN'T ____ ____ ____
+  setup4: I read a book about helium. I COULDN'T PUT ____ ____
+  setup5: I read a book about helium. I COULDN'T PUT IT ____
+  setup6: I read a book about helium. I COULDN'T PUT IT DOWN
+  setup7: I read a book about helium. I COULDN'T PUT IT DOWN
   answer:
   - I
   - couldn't

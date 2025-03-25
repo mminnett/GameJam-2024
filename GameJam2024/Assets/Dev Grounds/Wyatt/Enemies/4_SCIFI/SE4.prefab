@@ -131,11 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff598ee807b2b4f8429ebbcd3741fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 0}
-  textObject: {fileID: 0}
+  btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
-  setup: How do you make robots more human?
+  setup: How do you make robots more human? _____ _____ _____ _____
+  setup2: How do you make robots more human? WITH _____ _____ _____
+  setup3: How do you make robots more human? WITH ARTIFICAL _____ _____
+  setup4: How do you make robots more human? WITH ARTIFICAL STUPIDITY _____
+  setup5: How do you make robots more human? WITH ARTIFICAL STUPIDITY !
+  setup6: How do you make robots more human? WITH ARTIFICAL STUPIDITY !
+  setup7: How do you make robots more human? WITH ARTIFICAL STUPIDITY !
   answer:
   - With
   - artificial

@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class Action : MonoBehaviour
 {
@@ -23,6 +20,7 @@ public class Action : MonoBehaviour
     }
 
     public int startpoint;
+    public Enemy whatEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +38,7 @@ public class Action : MonoBehaviour
     {
         if (ButtonManager.Instance.hasCollided)
         {
-            if (checkButtonPun(ButtonManager.Instance.theAnswers, ButtonManager.Instance.theButtonText)) 
+            if (checkButtonPun(ButtonManager.Instance.theAnswers, ButtonManager.Instance.theButtonText))
             {
                 Debug.Log("YEEEEEEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSSSSSSS");
                 Debug.Log("startpoint " + startpoint);
@@ -48,7 +46,7 @@ public class Action : MonoBehaviour
         }
     }
 
-    public bool checkButtonPun(List<string> enemyText, string buttonText) 
+    public bool checkButtonPun(List<string> enemyText, string buttonText)
     {
         if (enemyText.Count >= 0)
         {
@@ -69,11 +67,36 @@ public class Action : MonoBehaviour
                 }
 
                 startpoint++;
+                if (startpoint == 1)
+                {
+                    ButtonManager.Instance.promptText.GetComponent<TextMeshProUGUI>().text = whatEnemy.setup2;
+                }
+                else if (startpoint == 2)
+                {
+                    ButtonManager.Instance.promptText.GetComponent<TextMeshProUGUI>().text = whatEnemy.setup3;
+                }
+                else if (startpoint == 3)
+                {
+                    ButtonManager.Instance.promptText.GetComponent<TextMeshProUGUI>().text = whatEnemy.setup4;
+                }
+                else if (startpoint == 4)
+                {
+                    ButtonManager.Instance.promptText.GetComponent<TextMeshProUGUI>().text = whatEnemy.setup5;
+                }
+                else if (startpoint == 5)
+                {
+                    ButtonManager.Instance.promptText.GetComponent<TextMeshProUGUI>().text = whatEnemy.setup6;
+                }
+
                 if (startpoint >= enemyText.Count)
                 {
                     Debug.Log("They almost there");
                     startpoint = 0;
                     ButtonManager.Instance.enemyIsDead = true;
+                    ButtonManager.Instance.speachBox.SetActive(false);
+                    ButtonManager.Instance.speachBoxPoint.SetActive(false);
+                    ButtonManager.Instance.promptText.SetActive(false);
+                    ButtonManager.Instance.enviornmentManager.GetComponent<EnviromentMovement>().moveSpeed = 7.8f;
                 }
                 return true;
             }

@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -26,6 +26,8 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] public GameObject promptText;
     [SerializeField] public GameObject enviornmentManager;
     [SerializeField] public float speedUpLength;
+    [SerializeField] public float slowDownLength;
+    [SerializeField] public Slider timer;
     public bool hasCollided;
     public string theButtonText;
     public List<string> theAnswers;

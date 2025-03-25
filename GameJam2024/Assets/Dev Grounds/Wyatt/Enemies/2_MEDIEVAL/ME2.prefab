@@ -131,11 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff598ee807b2b4f8429ebbcd3741fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 0}
-  textObject: {fileID: 0}
+  btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
-  setup: How do you become a executioner?
+  setup: How do you become a executioner?   ____   ____   ____   ____
+  setup2: How do you become a executioner? YOU   ____   ____   ____
+  setup3: How do you become a executioner? YOU HAVE TO   ____   ____
+  setup4: How do you become a executioner? YOU HAVE TO AXE   ____
+  setup5: How do you become a executioner? YOU HAVE TO AXE NICELY.
+  setup6: How do you become a executioner? YOU HAVE TO AXE NICELY.
+  setup7: How do you become a executioner? YOU HAVE TO AXE NICELY.
   answer:
   - You
   - have to

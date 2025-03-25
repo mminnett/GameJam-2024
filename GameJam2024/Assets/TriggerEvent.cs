@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TriggerEvent : MonoBehaviour
 {
-    
-    public enum eventType {ENEMY, JUMP, SLIDE, START, FINISH}
+
+    public enum eventType { ENEMY, JUMP, SLIDE, START, FINISH }
 
     public eventType type;
 
     public bool isTriggered;
 
     private int whatEnemy;
+
+    float speed;
 
     [SerializeField] private Transform enemySpawn;
     private List<GameObject> enemy1;
@@ -29,7 +29,7 @@ public class TriggerEvent : MonoBehaviour
     private void Awake()
     {
         parent = transform.parent.gameObject;
-
+        speed = 0;
         enemy1 = EnemyManager.Instance.enemyList1;
         enemy2 = EnemyManager.Instance.enemyList2;
         enemy3 = EnemyManager.Instance.enemyList3;
@@ -39,17 +39,21 @@ public class TriggerEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ButtonManager.Instance.enemyIsDead) 
+        if (ButtonManager.Instance.enemyIsDead)
         {
             Debug.Log("They Be dead");
-            ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().Kill();
-            ButtonManager.Instance.enemyIsDead = false;
+            if (ButtonManager.Instance.activeEnemy != null)
+            {
+                ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().Kill();
+            }
+            StopAllCoroutines();
+            ButtonManager.Instance.timer.value = 20;
         }
     }
 
@@ -63,6 +67,8 @@ public class TriggerEvent : MonoBehaviour
                 ButtonManager.Instance.hasCollided = false;
                 BackgroundManager.Instance.triggerCount++;
                 Action.Instance.startpoint = 0;
+                ButtonManager.Instance.timer.value = 20;
+                ButtonManager.Instance.enemyIsDead = false;
                 Debug.Log("Enemy trigger");
                 EnemyPick();
                 break;
@@ -80,7 +86,7 @@ public class TriggerEvent : MonoBehaviour
                 break;
 
             case eventType.FINISH:
-                
+
                 break;
         }
     }
@@ -93,6 +99,7 @@ public class TriggerEvent : MonoBehaviour
             {
                 int i = Random.Range(0, enemy1.Count);
                 whatEnemy = i;
+                whoYouWantDead = EnemyManager.Instance.enemyList1[i];
                 SetUpButtons();
                 Debug.Log("Spawn 'Enemy'");
                 ButtonManager.Instance.activeEnemy = Instantiate(EnemyManager.Instance.enemyList1[i], new Vector3(enemySpawn.position.x, enemySpawn.position.y + 1, enemySpawn.position.z), Quaternion.identity, parent.transform);
@@ -100,6 +107,7 @@ public class TriggerEvent : MonoBehaviour
                 ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().btnManager = ButtonManager.Instance.GetComponent<ButtonManager>();
                 EnemyManager.Instance.enemyList1.Remove(EnemyManager.Instance.enemyList1[i]);
                 whoYouWantDead = ButtonManager.Instance.activeEnemy;
+                Action.Instance.whatEnemy = whoYouWantDead.gameObject.GetComponent<Enemy>();
             }
             else
             {
@@ -121,6 +129,7 @@ public class TriggerEvent : MonoBehaviour
                 ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().btnManager = ButtonManager.Instance.GetComponent<ButtonManager>();
                 EnemyManager.Instance.enemyList2.Remove(EnemyManager.Instance.enemyList2[i]);
                 whoYouWantDead = ButtonManager.Instance.activeEnemy;
+                Action.Instance.whatEnemy = whoYouWantDead.gameObject.GetComponent<Enemy>();
             }
             else
             {
@@ -142,6 +151,7 @@ public class TriggerEvent : MonoBehaviour
                 ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().btnManager = ButtonManager.Instance.GetComponent<ButtonManager>();
                 EnemyManager.Instance.enemyList3.Remove(EnemyManager.Instance.enemyList3[i]);
                 whoYouWantDead = ButtonManager.Instance.activeEnemy;
+                Action.Instance.whatEnemy = whoYouWantDead.gameObject.GetComponent<Enemy>();
             }
             else
             {
@@ -163,6 +173,7 @@ public class TriggerEvent : MonoBehaviour
                 ButtonManager.Instance.activeEnemy.GetComponent<Enemy>().btnManager = ButtonManager.Instance.GetComponent<ButtonManager>();
                 EnemyManager.Instance.enemyList4.Remove(EnemyManager.Instance.enemyList4[i]);
                 whoYouWantDead = ButtonManager.Instance.activeEnemy;
+                Action.Instance.whatEnemy = whoYouWantDead.gameObject.GetComponent<Enemy>();
             }
         }
     }
@@ -172,6 +183,7 @@ public class TriggerEvent : MonoBehaviour
         ButtonManager.Instance.speachBox.SetActive(true);
         ButtonManager.Instance.speachBoxPoint.SetActive(true);
         ButtonManager.Instance.promptText.SetActive(true);
+        speed = FindAnyObjectByType<EnviromentMovement>().moveSpeed;
         StartCoroutine(SpeedAlt());
 
         if (LevelManager.Instance.type == LevelManager.TerrainType.FOOD)
@@ -202,6 +214,8 @@ public class TriggerEvent : MonoBehaviour
             {
                 ButtonManager.Instance.promptText.GetComponent<TextMeshProUGUI>().text = EnemyManager.Instance.enemyList2[whatEnemy].GetComponent<Enemy>().setup;
 
+                ButtonManager.Instance.theAnswers.Add(buttonText);
+
                 int i = Random.Range(0, ButtonManager.Instance.buttons.Count);
 
                 while (ButtonManager.Instance.buttons[i].gameObject.activeSelf)
@@ -220,6 +234,10 @@ public class TriggerEvent : MonoBehaviour
             foreach (string buttonText in EnemyManager.Instance.enemyList3[whatEnemy].GetComponent<Enemy>().answer)
             {
                 ButtonManager.Instance.promptText.GetComponent<TextMeshProUGUI>().text = EnemyManager.Instance.enemyList3[whatEnemy].GetComponent<Enemy>().setup;
+
+                ButtonManager.Instance.theAnswers.Add(buttonText);
+
+                ButtonManager.Instance.theAnswers.Add(buttonText);
 
                 int i = Random.Range(0, ButtonManager.Instance.buttons.Count);
 
@@ -240,6 +258,8 @@ public class TriggerEvent : MonoBehaviour
             {
                 ButtonManager.Instance.promptText.GetComponent<TextMeshProUGUI>().text = EnemyManager.Instance.enemyList4[whatEnemy].GetComponent<Enemy>().setup;
 
+                ButtonManager.Instance.theAnswers.Add(buttonText);
+
                 int i = Random.Range(0, ButtonManager.Instance.buttons.Count);
 
                 while (ButtonManager.Instance.buttons[i].gameObject.activeSelf)
@@ -257,10 +277,19 @@ public class TriggerEvent : MonoBehaviour
     {
         Debug.Log("SpeedAlt");
 
-        ButtonManager.Instance.enviornmentManager.GetComponent<EnviromentMovement>().moveSpeed -= 6;
+        yield return new WaitForSeconds(ButtonManager.Instance.slowDownLength);
 
-        yield return new WaitForSeconds(ButtonManager.Instance.speedUpLength);
+        ButtonManager.Instance.enviornmentManager.GetComponent<EnviromentMovement>().moveSpeed = 0;
+        StartCoroutine(Timer());
+    }
 
-        ButtonManager.Instance.enviornmentManager.GetComponent<EnviromentMovement>().moveSpeed += 6;
+    IEnumerator Timer()
+    {
+        while (ButtonManager.Instance.timer.value > 0)
+        {
+            yield return new WaitForSeconds(0.2f);
+            ButtonManager.Instance.timer.value -= 0.5f;
+        }
+        ButtonManager.Instance.enviornmentManager.GetComponent<EnviromentMovement>().moveSpeed = 7.8f;
     }
 }

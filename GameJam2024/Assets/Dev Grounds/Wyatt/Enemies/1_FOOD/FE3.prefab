@@ -134,7 +134,13 @@ MonoBehaviour:
   btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
-  setup: ____for your____
+  setup: ____for your ____
+  setup2: PENNE for your ____
+  setup3: PENNE for your THOUGHTS?
+  setup4: PENNE for your THOUGHTS?
+  setup5: PENNE for your THOUGHTS?
+  setup6: PENNE for your THOUGHTS?
+  setup7: PENNE for your THOUGHTS?
   answer:
   - Penne
   - thoughts?

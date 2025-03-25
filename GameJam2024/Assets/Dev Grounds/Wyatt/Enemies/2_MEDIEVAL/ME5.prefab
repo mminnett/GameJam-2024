@@ -131,11 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff598ee807b2b4f8429ebbcd3741fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 0}
-  textObject: {fileID: 0}
+  btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
-  setup: What do medieval postmen wear?
+  setup: What do medieval postmen wear?  ____   ____   ____   ____
+  setup2: What do medieval postmen wear? A   ____   ____   ____
+  setup3: What do medieval postmen wear? A SET OF   ____   ____
+  setup4: What do medieval postmen wear? A SET OF CHAIN   ____
+  setup5: What do medieval postmen wear? A SET OF CHAIN MAIL.
+  setup6: What do medieval postmen wear? A SET OF CHAIN MAIL.
+  setup7: What do medieval postmen wear? A SET OF CHAIN MAIL.
   answer:
   - A
   - set of

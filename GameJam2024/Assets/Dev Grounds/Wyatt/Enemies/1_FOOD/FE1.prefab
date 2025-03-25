@@ -157,6 +157,12 @@ MonoBehaviour:
   setupText: {fileID: 0}
   enemyId: 0
   setup: I'm ____ average _____
+  setup2: I'm NACHO average _____
+  setup3: I'm NACHO average JOKESTER?
+  setup4: I'm NACHO average JOKESTER?
+  setup5: I'm NACHO average JOKESTER?
+  setup6: I'm NACHO average JOKESTER?
+  setup7: I'm NACHO average JOKESTER?
   answer:
   - nacho
   - jokester?

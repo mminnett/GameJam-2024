@@ -131,10 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff598ee807b2b4f8429ebbcd3741fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 0}
+  btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
   setup: This is a ____ ____ ____ to take!
+  setup2: This is a WHISK ____ ____ to take!
+  setup3: This is a WHISK I'M ____ to take!
+  setup4: This is a WHISK I'M WILLING to take!
+  setup5: This is a WHISK I'M WILLING to take!
+  setup6: This is a WHISK I'M WILLING to take!
+  setup7: This is a WHISK I'M WILLING to take!
   answer:
   - whisk
   - I'm

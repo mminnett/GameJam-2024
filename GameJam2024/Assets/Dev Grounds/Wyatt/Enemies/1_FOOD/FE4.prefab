@@ -157,6 +157,12 @@ MonoBehaviour:
   setupText: {fileID: 0}
   enemyId: 0
   setup: ____ even ____ me!
+  setup2: UDON even ____ me!
+  setup3: UDON even KNOW me!
+  setup4: UDON even KNOW me!
+  setup5: UDON even KNOW me!
+  setup6: UDON even KNOW me!
+  setup7: UDON even KNOW me!
   answer:
   - Udon
   - know

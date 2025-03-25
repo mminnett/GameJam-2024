@@ -131,11 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff598ee807b2b4f8429ebbcd3741fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 0}
-  textObject: {fileID: 0}
+  btnManager: {fileID: 0}
   setupText: {fileID: 0}
   enemyId: 0
-  setup: Why was the calendar nervous about the future?
+  setup: Why was the calendar nervous about the future? _____ _____ _____ _____
+  setup2: Why was the calendar nervous about the future? IT'S _____ _____ _____
+  setup3: Why was the calendar nervous about the future? IT'S DAYS _____ _____
+  setup4: Why was the calendar nervous about the future? IT'S DAYS WERE _____
+  setup5: Why was the calendar nervous about the future? IT'S DAYS WERE NUMBERED!
+  setup6: Why was the calendar nervous about the future? IT'S DAYS WERE NUMBERED!
+  setup7: Why was the calendar nervous about the future? IT'S DAYS WERE NUMBERED!
   answer:
   - It's
   - days
